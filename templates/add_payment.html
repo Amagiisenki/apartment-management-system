@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Accept Payment — Apartment System{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Accept Payment</h1>
+    <p>Record a rent payment with date and billing period.</p>
+</header>
+
+<div class="panel" style="max-width: 480px;">
+    <form method="POST">
+        <div class="form-group">
+            <label for="tenant_name">Tenant Name</label>
+            <input type="text" id="tenant_name" name="tenant_name" required>
+        </div>
+        <div class="form-group">
+            <label for="unit_number">Unit Number</label>
+            <input type="text" id="unit_number" name="unit_number" required>
+        </div>
+        <div class="form-group">
+            <label for="amount_paid">Amount Paid</label>
+            <input type="number" id="amount_paid" name="amount_paid" step="0.01" min="0" required>
+        </div>
+        <div class="form-group">
+            <label for="payment_date">Payment Date</label>
+            <input type="date" id="payment_date" name="payment_date" required>
+        </div>
+        <div class="form-group">
+            <label for="month_paid">Month Paid</label>
+            <input type="text" id="month_paid" name="month_paid" placeholder="Example: June 2026" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Accept Payment</button>
+    </form>
+    <div class="actions-row">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

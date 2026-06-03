@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Tenants — Apartment System{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Tenant List</h1>
+    <p>All registered tenants and their assigned units.</p>
+</header>
+
+{% if tenants %}
+<div class="table-wrap">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Contact</th>
+                <th>Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tenant in tenants %}
+            <tr>
+                <td>{{ tenant[0] }}</td>
+                <td>{{ tenant[1] }}</td>
+                <td>{{ tenant[2] }}</td>
+                <td>{{ tenant[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="panel empty-state">
+    <p>No tenants registered yet.</p>
+    <a href="/add_tenant" class="btn btn-primary">Add Tenant</a>
+</div>
+{% endif %}
+
+<div class="actions-row">
+    <a href="/add_tenant" class="btn btn-primary">Add Another Tenant</a>
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}

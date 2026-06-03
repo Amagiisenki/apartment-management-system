@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — Apartment System{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Dashboard</h1>
+    <p>Apartment collection and management — quick access to all modules.</p>
+</header>
+
+<div class="card-grid">
+    <a href="/apartments" class="action-card">
+        <h3>View Apartments</h3>
+        <p>Browse units, rent, and occupancy status.</p>
+    </a>
+    <a href="/add_tenant" class="action-card">
+        <h3>Add Tenant</h3>
+        <p>Register a new tenant and assign a unit.</p>
+    </a>
+    <a href="/tenants" class="action-card">
+        <h3>View Tenants</h3>
+        <p>See all tenants and contact details.</p>
+    </a>
+    <a href="/add_payment" class="action-card">
+        <h3>Accept Payment</h3>
+        <p>Record a rent payment from a tenant.</p>
+    </a>
+    <a href="/payments" class="action-card">
+        <h3>View Payments</h3>
+        <p>Review payment history and billing periods.</p>
+    </a>
+    <a href="/admin" class="action-card admin">
+        <h3>Admin: Add Apartment</h3>
+        <p>Protected area to add new apartment units.</p>
+    </a>
+</div>
+{% endblock %}

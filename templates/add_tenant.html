@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Add Tenant — Apartment System{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Add Tenant</h1>
+    <p>Register tenant contact information and unit assignment.</p>
+</header>
+
+<div class="panel" style="max-width: 480px;">
+    <form method="POST">
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="unit">Unit</label>
+            <input type="text" id="unit" name="unit" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Tenant</button>
+    </form>
+    <div class="actions-row">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

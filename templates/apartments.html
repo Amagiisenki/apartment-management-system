@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Apartments — Apartment System{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <h1>Available Apartment Units</h1>
+    <p>All registered units with rent and occupancy status.</p>
+</header>
+
+{% if apartments %}
+<div class="table-wrap">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Unit Number</th>
+                <th>Monthly Rent</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for apartment in apartments %}
+            <tr>
+                <td>{{ apartment[0] }}</td>
+                <td>{{ apartment[1] }}</td>
+                <td>{{ "%.2f"|format(apartment[2]) }}</td>
+                <td>
+                    {% if apartment[3] == 'Vacant' %}
+                    <span class="badge badge-vacant">Vacant</span>
+                    {% else %}
+                    <span class="badge badge-occupied">Occupied</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="panel empty-state">
+    <p>No apartment units on record yet.</p>
+    <a href="/admin" class="btn btn-primary">Add Apartment (Admin)</a>
+</div>
+{% endif %}
+
+<div class="actions-row">
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}
